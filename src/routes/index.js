@@ -16,7 +16,7 @@ router.post('/registrar',(req,res) => {
    
     let configProducto = {
         user: process.env.DB_PRODUCTO_USER || 'postgres',
-        host: process.env.DB_PRODUCTO_HOST || 'localhost',
+        host: process.env.DB_PRODUCTO_HOST || 'database-1.cqmtzdxfryzu.us-east-1.rds.amazonaws.com',
         database: process.env.DB_PRODUCTO_DATABASE || 'postgres',
         password: process.env.DB_PRODUCTO_PASSWORD || 'A3a775aa',
         port: process.env.DB_PRODUCTO_PORT || 5432,
