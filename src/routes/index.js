@@ -4,7 +4,7 @@ const { Client} = require('pg');
 
 
 
-router.get('/signin2',(req,res) => {
+router.get('/encustasunfv',(req,res) => {
     res.render('index')
 
 })
