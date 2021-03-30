@@ -1,0 +1,20 @@
+{
+  "name": "softmar_crm_fontend",
+  "version": "1.0.0",
+  "description": "Sistema orientado al cliente CRM",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg": "^8.5.1"
+  }
+}
