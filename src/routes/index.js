@@ -100,8 +100,11 @@ res.send('Encuenta se registro con exito')
         console.info("Fin de ejecucion del metodo ProductoDestination del objeto ProductoDAO" );
       
     
+      
+      
+
+      
       } catch (error) {
-        res.send('Encuenta se registro sin exito')
 
         console.info("Error de ejecucion a base de datos" + error);
     
