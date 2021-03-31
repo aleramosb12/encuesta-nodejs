@@ -10,8 +10,7 @@ router.get('/encustasunfvrml',(req,res) => {
 })
 
 router.post('/registrar',(req,res) => {
-    console.log(req.body);
-    console.log( req.body.pregunta1a);
+    console.log( req.body.pregunta6c,);
 
    
     let configProducto = {
