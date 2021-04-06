@@ -1,717 +1,135 @@
-  
-  <script>
-  $('.btn').button('complete')
-</script>
-  
-  <div class="container">
 
 
-<form method="POST" action="/registrar">
-<body>
-<br>
-<br>
+ 
 
-     <table class="table table-bordered">
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-    <tr>
-      <th scope="col" >Encuenta Tesis</th>
-    </tr>
-    </table>
-<br>
-<div class="row">
-  <div >
-Estimado estudiante lea atentamente las siguientes preguntas y seleccione o escriba. Este
-cuestionario está encaminado a evaluar el consumo de bebidas azucaradas y el estado
-nutricional de los escolares de 6to grado de primaria de la I. E 7029 Virgen milagrosa.
-Es de suma importancia que su respuesta sea lo más sincera posible.
-
-</div><br><br><br><br>
-  <div >1. Cuestionario de Cantidad y frecuencia de Consumo de Bebidas.
-
-</div><br><br>
- <div class="col-sm-8">Datos de identificación:</div><br>
-<br>
-
-</div>
-
- <table class="table table-bordered">
-
-    <tr>
-      <th scope="col" >Nombre y Apellido</th>
-      <th scope="col" ><input type="text" class="form-control" name="nombres" ></th>
-    </tr>
-
- <tr>
-      <th scope="col" >Edad</th>
-      <th scope="col" ><input type="number" class="form-control" name="edad" ></th>
-    </tr>
-
-     <tr>
-      <th scope="col" >Sexo</th>
-      <th> <select name="sexo" class="form-select" >
-        <option value="Masculino" selected>Masculino</option>
-        <option value="Femenino" >Femenino</option>
-
-      </select></th>
-    </tr>
-
-  </table>
-
-
-   <table class="table table-bordered">
-  <tbody>
-
-    <tr>
-      <th scope="col" rowspan="2" >TIPOS DE BEBIDAS AZUCARADAS</th>
-      <th scope="col" >Ejemplos</th>
-      <th scope="col"  colspan="2">Consume</th>
-      <th scope="col"  colspan="1">Frecuencia</th>
-      <th scope="col"  colspan="1">Cantidad</th>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>Si</td>
-      <td>No</td>
-      <td>- Todos los dias <br>- 1 a 3 veces por semana <br>- 4 a 6 veces por semana</td>
-      <td>- 1 Vaso 200ml <br>- 2 Vaso 400ml <br>- 3 Vaso 600ml <br>- > de 4 vasos</td>
-    </tr>
-    <tr>
-      <th scope="row">JUGOS NATURALES</th>
-      <td>Jugos y agua de frutas con azúcar.</td>
-      <td colspan="2" >
-        <select name="pregunta1a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta1b" class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta1c" class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">INFUSIONES</th>
-      <td>Infusiones con azúcar</td>
-      <td  colspan="2" >
-        <select name="pregunta2a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta2b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta2c"  class="form-select" aria-label="Default select example">
-        <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" rowspan="6">JUGOS Y NECTAR ENVASADOS</th>
-      <td >cifrut</td>
-      <td colspan="2" >
-        <select name="pregunta3a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta3b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta3c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>  
-    <tr>      
-      <td >tampico</td>
-      <td colspan="2" >
-        <select name="pregunta4a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta4b" class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta4c" class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-     <tr>      
-      <td >frugos</td>
-        <td colspan="2" >
-        <select name="pregunta5a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta5b" class="form-select" >
-        <option   selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta5c" class="form-select" aria-label="Default select example">
-          <option   selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-     <tr>      
-      <td >watts</td>
-<td colspan="2" >
-        <select name="pregunta6a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta6b"  class="form-select" >
-        <option  selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select  name="pregunta6c" class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-     <tr>      
-      <td >Chicha morada</td>
-        <td colspan="2" >
-        <select  name="pregunta7a" class="form-select" >
-        <option selected></optio n>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta7b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta7c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-           <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      
-      <td >Aquarius</td>
-<td colspan="2" >
-        <select  name="pregunta8a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select  name="pregunta8b" class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select  name="pregunta8c" class="form-select" aria-label="Default select example">
-          <option  selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-
-
-    <tr>
-      <th scope="row" rowspan="6">GASEOSAS</th>
-      <td >Coca cola</td>
-     <td colspan="2" >
-        <select  name="pregunta9a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select  name="pregunta9b" class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta9c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>      
-        <tr>      
-      <td >Inca Kola</td>
-      <td colspan="2" >
-        <select name="pregunta10a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta10b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta10c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-        <tr>      
-      <td >Spritte</td>
-      <td colspan="2" >
-        <select name="pregunta11a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta11b"  class="form-select" >
-        <option selected> </option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta11c"   class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-        <tr>      
-      <td >Pepsi</td>
-      <td colspan="2" >
-        <select  name="pregunta12a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta12b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta12c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-        <tr>      
-      <td >Guaranná</td>
-      <td colspan="2" >
-        <select name="pregunta13a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta13b" class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta13c" class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-        <tr>      
-      <td >Big Cola</td>
-      <td colspan="2" >
-        <select name="pregunta14a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta14b" class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select  name="pregunta14c" class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th rowspan="3" >REHIDRATANTES</th>
-      <td >Sporade</td>
-      <td colspan="2" >
-        <select  name="pregunta15a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select   name="pregunta15b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta15c"  class="form-select" aria-label="Default select example">
-          <option   selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td >Gatorade </td>
-      <td colspan="2" >
-        <select   name="pregunta16a" class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta16b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta16c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-     <tr>
-      <td>Paworade</td>
-      <td colspan="2" >
-        <select name="pregunta17a"  class="form-select" >
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta17b"  class="form-select" >
-        <option selected></option>
-        <option >Todos los dias</option>
-        <option >1 a 3 veces por semana</option>
-        <option >4 a 6 veces por semana</option>
-      </select>
-      </td>
-      <td>
-        <select name="pregunta17c"  class="form-select" aria-label="Default select example">
-          <option selected></option>
-        <option  >1 Vaso 200ml</option>
-        <option >2 Vaso 400ml</option>
-        <option >3 Vaso 600ml	</option>
-        <option >> de 4 vasos</option>
-        </select>
-      </td>
-    </tr>
-  </tbody>
-
-
-
-</table>
-
-<div class="row">
-  <div class="col-sm-8">2. Si tu respuesta fue sí, respecto al consumo de Jugos o agua de frutas
-naturales/Infusiones con azúcar ¿Qué cantidad de azúcar agregas a 1 vaso?
-Caso contrario pase a la siguiente pregunta.</div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-      <select name="pregunta2aa" class="form-select" aria-label="Default select example">
-        <option selected></option>
-        <option >1 Cucharita</option>
-        <option >2 Cucharita	</option>
-        <option >3 Cucharita</option>
-        <option >>3 Cucharita</option>
-      </select>
-  </div>
-<div>
-
-  <div class="row">
-  <div class="col-sm-8">¿Consume agua natural?</div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-      <select name="pregunta2bb"  class="form-select" aria-label="Default select example">
-        <option selected></option>
-        <option >Si</option>
-        <option >No</option>
-      </select>
-  </div>
-<div>
-
-    <div class="row">
-  <div class="col-sm-8">¿Qué cantidad de agua natural consume diariamente?</div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-      <select name="pregunta3cc"  class="form-select" aria-label="Default select example">
-        <option selected></option>
-        <option >1 Vaso (200ml)</option>
-        <option >2 Vasos (400ml)</option>
-        <option >3 Vasos</option>
-        <option >4 Vasos</option>
-        <option >>5 Vasos </option>
-        <option >no consume</option>
-
-      </select>
-  </div>
-<div>
-
-<div class="row">
-    <div class="col-sm-2"></div>
-
-  <div class="col-sm">
-     -
+      <h2>Section title</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Header</th>
+              <th>Header</th>
+              <th>Header</th>
+              <th>Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1,001</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+              <td>text</td>
+            </tr>
+            <tr>
+              <td>1,002</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+              <td>layout</td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+              <td>tabular</td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,004</td>
+              <td>text</td>
+              <td>random</td>
+              <td>layout</td>
+              <td>dashboard</td>
+            </tr>
+            <tr>
+              <td>1,005</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+              <td>placeholder</td>
+            </tr>
+            <tr>
+              <td>1,006</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,007</td>
+              <td>placeholder</td>
+              <td>tabular</td>
+              <td>information</td>
+              <td>irrelevant</td>
+            </tr>
+            <tr>
+              <td>1,008</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+              <td>text</td>
+            </tr>
+            <tr>
+              <td>1,009</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+              <td>layout</td>
+            </tr>
+            <tr>
+              <td>1,010</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+              <td>tabular</td>
+            </tr>
+            <tr>
+              <td>1,011</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,012</td>
+              <td>text</td>
+              <td>placeholder</td>
+              <td>layout</td>
+              <td>dashboard</td>
+            </tr>
+            <tr>
+              <td>1,013</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+              <td>visual</td>
+            </tr>
+            <tr>
+              <td>1,014</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,015</td>
+              <td>random</td>
+              <td>tabular</td>
+              <td>information</td>
+              <td>text</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-</div><br>
-  <div class="row">
-  <div class="col-sm-12">5. Recordatorio de 24 horas (Consumo de Bebidas y alimentos en 24 horas)
-</div>
-</div><br>
-<div class="row">
-    <div class="col-sm-1"></div>
 
-  <div class="col-sm">
-         Intrucciones
-      </div><br><br>
-</div>
- <div class="row">
-  <div class="col-sm-1"></div>
-    <div class="col-sm">- Debes mencionar todo LA COMIDA O BEBIDA que consumiste el día de ayer
-desde el DESAYUNO, MEDIA MAÑANA, ALMUERZO, MEDIA TARDE
-hasta la CENA.</div>
-</div>
-<div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm">- Asimismo, considerar LAS CANTIDADES DE COMIDA Y BEBIDAS que
-consumiste en MEDIDAS CASERAS, por ejemplo, 1 und de huevo, 1 taza de
-arroz, 1 vaso de refresco de maracuyá con el número de cucharaditas de azúcar, o la
-cantidad de mililitros que indique el envase de un jugo o gaseosa. Todo esto debes
-hacerlo con la ayuda de un adulto, para que te ayude con las cantidades..</div><br><br>
-</div><br><br>
-</div><br><br><br>
-
-   <table class="table table-bordered">
-    <tr>
-      <th scope="col" >TIEMPO DE COMIDA</th>
-      <th scope="col" >PREPARACIÓN</th>
-    </tr>
-    <tr>
-      <td rowspan="1">Desayuno</td>
-      <td rowspan="1"><textarea type="text" class="form-control" name="pregunta1a1"></textarea></td>
-    </tr>
-   
-
-     <tr>
-      <td rowspan="1">Media Mañana</td>
-      <td rowspan="1"><textarea type="text" class="form-control" name="pregunta2a1"  ></textarea></td>
-    </tr>
-     <tr>
-      <td rowspan="1">Almuerzo</td>
-      <td rowspan="1"><textarea type="" class="form-control" name="pregunta3a1"  ></textarea></td>
-    </tr>
- <tr>
-      <td rowspan="1">Media Tarde</td>
-      <td rowspan="1"><textarea type="text" class="form-control" name="pregunta4a1"  ></textarea></td>
-    </tr>
-
-     <tr>
-      <td rowspan="1">Cena</td>
-      <td rowspan="1"><textarea type="text" class="form-control" name="pregunta5a1"  ></textarea></td>
-    </tr>
-     </table><br>
-
-<br><br>
-<br>
-<div><button type="button" class="btn btn-success"> Ejemplo de como llenar el siguiente formulario</button></div>
-   <br><br>
-     <table class="table table-bordered">
-    <tr>
-      <th scope="col" >TIEMPO DE COMIDA</th>
-      <th scope="col" >PREPARACIÓN</th>
-    </tr>
-    <tr>
-      <td rowspan="1">Desayuno</td>
-      <td rowspan="1">1 Taza de Avena con 3 Cucharaditas de azúcar.
-+ 1 Unidad de Pan con 1 Unidad de Huevo revuelto.
-+ 1 Unidad de Pan con mantequilla.
-+ 1 Unidad de Granadilla.
-</td>
-    </tr>
-   
-
-     <tr>
-      <td rowspan="1">Media Mañana</td>
-      <td rowspan="1"> 1 Botella de 300 ml de Frugos.
-+ 1 Paquete de Galleta soda.</td>
-    </tr>
-     <tr>
-      <td rowspan="1">Almuerzo</td>
-      <td rowspan="1"> 1 Unidad Presa de Pollo de estofado.
-+ 1 Unidad de papa.
-+ 1/2 Taza de Arroz.
-+ 2 Vasos de maracuyá con 2 Cucharaditas cada vaso.</td>
-    </tr>
- <tr>
-      <td rowspan="1">Media Tarde</td>
-      <td rowspan="1">+ 1 Tajada de Queque.</td>
-    </tr>
-
-     <tr>
-      <td rowspan="1">Cena</td>
-      <td rowspan="1"> 1 Unidad de filete de Pescado.
-+ 2 Unidades de Papa dorada mediana.
-+ 1 Taza de Infusión sin azúcar.</td>
-    </tr>
-     </table><br>
-   
-     <input type="submit" value="Registrar">
-
-
-<br>
-<br>
-
-GRACIAS POR SU COLABORACIÓN.
-
-</body>
-</form>
-</div>
