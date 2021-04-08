@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { Client} = require('pg');
+const app = express();
 
 
 
-router.get('/encustasunfvrml',(req,res) => {
-    res.render('index')
+router.get('/login',(req,res) => {
+    res.render('login')
+})
 
+router.post('/dashboard',(req,res) => {
+    console.log("app.locals.login_usuario",app.locals.login_usuario);
+    let login_usuario = req.body.login_usuario;
+    req.flash("login_usuario",login_usuario)
+
+    req.body.login_usuario? res.render('dashboard',{login_usuario}):res.redirect('login')
 })
 
 

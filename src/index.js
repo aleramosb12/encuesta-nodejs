@@ -3,6 +3,7 @@ const path = require('path')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const flash = require('connect-flash');
 const app = express();
 
 // Settings
@@ -24,6 +25,13 @@ app.set("view engine", ".hbs");
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.use(express.json())
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+app.use(flash());
 
 //
 //Router
@@ -31,6 +39,7 @@ app.use(require('./routes/index'))
 
 //variables globales
 app.use((req, res, next) => {
+  app.locals.login_usuario = req.flash('login_usuario')
   next();
 });
 
