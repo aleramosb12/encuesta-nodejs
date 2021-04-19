@@ -1,10 +1,10 @@
 const express = require('express')
+const app = express();
 const path = require('path')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const flash = require('connect-flash');
-const app = express();
 
 // Settings
 app.set('port',process.env.PORT || 3001)
@@ -26,22 +26,23 @@ app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'mysecretkey',
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+  saveUninitialized: false
+}));
 app.use(flash());
+
+app.use((req, res, next) => {
+
+  app.locals.login_usuario = req.session.login_usuario;
+  next();
+  
+});
+
 
 //
 //Router
 app.use(require('./routes/index'))
-
-//variables globales
-app.use((req, res, next) => {
-  app.locals.login_usuario = req.flash('login_usuario')
-  next();
-});
 
 //publico
 app.use(express.static(path.join(__dirname,'public')))

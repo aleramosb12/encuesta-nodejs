@@ -1,19 +1,52 @@
+const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
+
 const app = express();
 
 
 
-router.get('/login',(req,res) => {
-    res.render('login')
+router.get('/login', (req, res) => {
+    
+    if(req.session.login_usuario !== undefined){
+        res.redirect('dashboard') ;
+    }else{
+        res.render('login')
+    }
+
 })
 
-router.post('/dashboard',(req,res) => {
-    console.log("app.locals.login_usuario",app.locals.login_usuario);
-    let login_usuario = req.body.login_usuario;
-    req.flash("login_usuario",login_usuario)
+router.post('/ouath', (req, res) => {
 
-    req.body.login_usuario? res.render('dashboard',{login_usuario}):res.redirect('login')
+    axios.post('http://localhost:3000/dev/seguridad/login', {
+        usuario: req.body.login_usuario,
+        contrasena: req.body.login_contrasena,
+        id_empresa: req.body.login_usuario
+        }).then(function (response) {
+
+            if (response.data.statusCode === 2) {
+                req.session.login_usuario = req.body.login_usuario
+                    res.redirect('dashboard')
+
+            }else{
+                res.redirect('login')
+
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+})
+
+
+router.get('/dashboard', (req, res) => {
+
+    if(req.session.login_usuario !== undefined){
+        res.render('dashboard') ;
+    }else{
+        res.redirect('login')
+    }
+
 })
 
 
