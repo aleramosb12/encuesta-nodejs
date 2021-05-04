@@ -2,9 +2,6 @@ const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
 
-const app = express();
-
-
 
 router.get('/login', (req, res) => {
     
@@ -18,24 +15,25 @@ router.get('/login', (req, res) => {
 
 router.post('/ouath', (req, res) => {
 
-    axios.post('http://localhost:3000/dev/seguridad/login', {
-        usuario: req.body.login_usuario,
-        contrasena: req.body.login_contrasena,
-        id_empresa: req.body.login_usuario
-        }).then(function (response) {
+axios.post('http://localhost:3000/seguridad/oauth2', {
 
-            if (response.data.statusCode === 2) {
-                req.session.login_usuario = req.body.login_usuario
-                    res.redirect('dashboard')
+  usuario: req.body.login_usuario,
+  contrasena: req.body.login_contrasena,
+  id_empresa: req.body.login_usuario
+  }).then(function (response) {
 
-            }else{
-                res.redirect('login')
+      if (response.data.statusCode === 2) {
+          req.session.login_usuario = req.body.login_usuario
+              res.redirect('dashboard')
 
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+      }else{
+          res.redirect('login')
+
+      }
+  })
+  .catch(function (error) {
+      console.log(error);
+  })
 })
 
 
